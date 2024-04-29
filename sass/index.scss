@@ -751,7 +751,7 @@ body {
 .card {
   display: $df;
   justify-content: space-around;
-  padding-right: 500px;
+  // padding-right: 500px; выносит блок за границы родительского
 }
 
 .card__text {
@@ -771,7 +771,7 @@ body {
   transform: rotate(28.84deg);
   margin-top: 90px;
   position: relative;
-  left: 170px;
+  left: 75px;
 }
 
 .card__text-rotate-25 {
@@ -779,14 +779,15 @@ body {
   height: 2.3em;
   transform: rotate(-25deg);
   position: relative;
-  top: 90px;
-  right: 20px;
+  top: 60px;
+  right: 300px;
 }
 
 .chapter {
   text-align: right;
   position: relative;
-  right: 150px;
+  right: 80px;
+  bottom: 80px;
 }
 
 .chapter__title {
@@ -794,8 +795,6 @@ body {
   font-size: $title-size;
   color: $indigo;
   font-weight: 200;
-  position: relative;
-  bottom: 65px;
 }
 
 .chapter__title-config {
@@ -812,13 +811,19 @@ body {
 }
 
 .group {
-  display: $df;
+  // overflow: hidden;
+  // display: $df;
+  // df сдвигает блок с текстом за пределы родителя
 }
 
 .grouping {
-  position: relative;
-  bottom: 115px;
-  right: 10px;
+  // width: 25em;
+  // height: 26em;
+  // box-sizing: border-box;
+  // overflow: hidden;
+  // position: relative;
+  // bottom: 140px;
+  // left: 190px;
 }
 
 .grouping__title {
@@ -828,26 +833,42 @@ body {
   color: $indigo;
   width: 300px;
   height: 129px;
-  margin-left: 150px;
+  // margin-left: 150px; выносит блок за пределы родительского
   text-align: center;
+  position: relative;
+  // right: 21px;
+  left: 150px;
+  bottom: 150px;
 }
 
 .grouping__img {
-  margin-left: 200px;
+  position: relative;
+  left: 200px;
+  bottom: 150px;
+  // margin-left: 200px; выносит блок за пределы родительского
 }
 
 .description {
+  overflow: hidden;
+  width: 878px;
+  height: 450px;
   position: relative;
-  bottom: 60px;
-  padding: 70px;
+  bottom: 360px;
+  left: 500px;
+
+  // padding: 40px;
   // padding для выравнивания текста по краю страницы как на макете
-  margin-left: 30px;
+  // margin-left: 30px;
 }
 
 .description__text {
   font-family: $main-font;
   font-size: $main-size;
   padding: 30px;
+  // text-align: left;
+
+  // flex-direction: column;
+  // justify-content: right;
 }
 
 .description__text-price {
