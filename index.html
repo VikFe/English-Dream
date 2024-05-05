@@ -138,7 +138,7 @@
         <div class="studio__text_dream768_2">студентов уже более 15 лет!</div>
         <div class="studio__text_15768">15+</div>
         <div class="studio__text_yers768">лет практики</div>
-        <div class="studio__text_12000768">+12000</div>
+        <div class="studio__text_12000768">+12 000</div>
         <div class="studio__text_lessons768">занятий</div>
         <div class="studio__text_500768">500+</div>
         <div class="studio__text_students768">учеников</div>
@@ -150,6 +150,8 @@
         <h2 class="courses__title" id="course">курсы</h2>
 
         <div class="courses__container swiper-container sliderCourses">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
           <!--<div class="swiper-container sliderCourses">-->
           <div class="courses__wrapper swiper-wrapper">
             <div class="courses__slide swiper-slide">
@@ -318,12 +320,7 @@
             </div>
           </div>
 
-          <!-- Стрелки -->
-          <div class="slider-buttons">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-          <!-- </div> -->
+          <!-- Стрелки -->          
         </div>
       </section>
       <!--курсы end -->
@@ -622,7 +619,7 @@
                     </div>
                 </div>
             </section>
-       <!--speaking club end --> 
+      <!--speaking club end --> 
 
       <!-- oтзывы start -->
       <section class="reviews" id="section-reviews">
@@ -632,6 +629,7 @@
           </div>
           <div class="reviews_slider swiper mySwiper1">
             <div class="swiper-wrapper">
+              
               <div class="reviews_card swiper-slide swiper-slide-first">
                 <div class="card_wrapper">
                   <p class="reviews_text">
@@ -724,14 +722,13 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="swiper-button-next"></div> -->
-            <!-- <div class="swiper-button-prev"></div>  -->
+            <div class="swiper-button-prev"></div> 
+            <div class="swiper-button-next"></div> 
+          
           </div>
-          <div class="reviews_button reviews_button__big">
-            <a href="https://forms.gle/GbCKPXt2ZUX4GVLC6" class="button">
-              <p class="reviews_sent">оставить отзыв</p>
+            <a href="https://forms.gle/GbCKPXt2ZUX4GVLC6" class="reviews_button reviews_button__big button">
+              оставить отзыв
             </a>
-          </div>
         </div>
       </section>
       <!-- oтзывы end -->
@@ -843,14 +840,14 @@
         1600: {
             slidesPerView: 3,
             centeredSlides: true,
-            spaceBetween: 120,
+            spaceBetween: 85,
         },
 
         },
     });
 
-      // var appendNumber = 4;
-      // var prependNumber = 1;
+      var appendNumber = 4;
+      var prependNumber = 1;
     </script>
 
     <!-- Swiper JS -->
@@ -889,13 +886,15 @@
 
         //количество слайдов для показа
         slidesPerView: 3,
-        spaceBetween: 15,
+        spaceBetween: 30,
 
         //переключать слайды по клику на них
         slideToClickedSlide: true,
 
+        speed: 700,
+
         //бесконечный слайдер
-        loop: true,
+        // loop: true,
 
         breakpoints: {
           320: {
@@ -932,8 +931,12 @@
           },
           1380: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 15,
           },
+          1520: {
+            slidesPerView: 3,
+            spaceBetween: 35,            
+          }
         },
 
         // centeredSlides: true,

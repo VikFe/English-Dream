@@ -70,9 +70,9 @@ body {
   display: $dg;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 13% 10% 1fr;
-  //    padding-right: 2%;
-  //     padding-left: 2%;
-  padding: 1%;
+     padding-right: 2%;
+    //   padding-left: 2%;
+  // padding: 1%;
   padding-top: 1%;
   margin-bottom: 5%;
 }
@@ -81,7 +81,7 @@ body {
   grid-column: 1/2;
   grid-row: 1/4;
   background-repeat: no-repeat;
-  background-image: url('../assets/images/logo-back.svg');
+  background-image: url("../assets/images/logo-back.svg");
   background-size: 70%;
 }
 
@@ -208,7 +208,7 @@ body {
   height: 100%;
   grid-column: 2/3;
   grid-row: 2/4;
-  background-image: url('../assets/images/home-page.svg');
+  background-image: url("../assets/images/home-page.svg");
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
@@ -250,10 +250,10 @@ body {
 }
 
 .header__caption-btn:hover {
-  background-color: #27686C;
+  background-color: #27686c;
 }
 
-.header__link-social_icon-back{
+.header__link-social_icon-back {
   display: $df;
   justify-content: center;
   align-items: center;
@@ -290,11 +290,12 @@ body {
   grid-row: 1/2;
 }
 .studio__img768 {
-  max-width: 100%;
+  max-width: 90%;
   display: block;
   grid-column: 1/4;
   grid-row: 2/11;
   padding: 5%;
+  border-radius: 59px;
 }
 .studio__text_director768 {
   color: orange;
@@ -353,8 +354,9 @@ body {
   color: $indigo;
   grid-column: 4/5;
   grid-row: 8/9;
-  place-self: center;
-  margin-left: 12%;
+  justify-self: center;
+  align-self: flex-end;
+  margin-left: 10%;
   font-family: $main-font;
   font-size: 2rem;
 }
@@ -362,16 +364,18 @@ body {
   color: $red;
   grid-column: 4/5;
   grid-row: 9/10;
-  place-self: center;
-  margin-left: 12%;
+  justify-self: center;
+  align-self: start;
+  margin-left: 10%;
   font-family: $main-font;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
 }
 .studio__text_12000768 {
   color: $indigo;
   grid-column: 5/6;
   grid-row: 8/9;
-  place-self: center;
+  justify-self: center;
+  align-self: flex-end;
   font-family: $main-font;
   font-size: 2rem;
 }
@@ -379,15 +383,17 @@ body {
   color: $red;
   grid-column: 5/6;
   grid-row: 9/10;
-  place-self: center;
+  justify-self: center;
+  align-self: start;
   font-family: $main-font;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
 }
 .studio__text_500768 {
   color: $indigo;
   grid-column: 6/7;
   grid-row: 8/9;
-  place-self: center;
+  justify-self: center;
+  align-self: flex-end;
   font-family: $main-font;
   font-size: 2rem;
 }
@@ -395,9 +401,10 @@ body {
   color: $red;
   grid-column: 6/7;
   grid-row: 9/10;
-  place-self: center;
+  justify-self: center;
+  align-self: start;
   font-family: $main-font;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
 }
 
 .studio {
@@ -642,17 +649,23 @@ body {
 }
 
 .courses__container {
-  max-width: 1360px;
+  // max-width: 1360px;
+  max-width: 1495px;
   margin: 0 auto;
-  padding-top: 5.44vw;
-  box-sizing: border-box;
   overflow: hidden;
+  position: relative;
+  padding-top: 5.44vw;
+  padding-right: 2.75vw;//44px
+  padding-left: 1.69vw;//27px
 }
 
 .courses__container .swiper-slide {
   max-width: 100%;
 }
 
+.courses__wrapper {
+  max-width: 1360px;
+}
 // .swiper-wrapper {
 //   align-items: stretch;
 // }
@@ -664,9 +677,8 @@ body {
 .courses__item {
   max-width: 100%;
   display: $df;
-  justify-content: center;
-  column-gap: 20%;
-  //   // align-items: flex-end;
+  justify-content: flex-end;
+  // column-gap: 20%;
 }
 
 .course-circle {
@@ -677,7 +689,7 @@ body {
   position: absolute;
   z-index: 0;
   top: -5.25vw;
-  right: -1.88vw;
+  // right: -1.88vw;
 }
 
 .course-circle-ext {
@@ -704,18 +716,33 @@ body {
 }
 
 // Стрелки
-.swiper-button-prev,
-.swiper-button-next {
-  margin: 0 20px;
-}
-
-.swiper-button-next:after {
-  content: url("./assets/images/button-next.svg");
-  // content: url(./assets/images/button-next.svg);
-}
-
+.swiper-button-next:after, 
 .swiper-button-prev:after {
-  content: url("./assets/images/button-prev.svg");
+  display: none;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+  background-color: $darkcyan;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-prev {
+  background-image: url('./assets/images/prev.svg');
+  background-position: 40% 50%;
+}
+
+.swiper-button-next {
+  background-image: url('./assets/images/next.svg');
+  background-position: 60% 50%;
+}
+
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+  background-color: #27686C;
 }
 
 .course-content {
@@ -733,6 +760,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
+  margin-right: 1.56vw//25px;
 }
 
 // .course-header {
@@ -789,6 +817,10 @@ body {
   align-self: center;
 }
 
+.button_small:hover{
+  background-color: #27686C;
+}
+
 // // @media screen and (max-width: 1088px) {
 // //   .course_title {
 // //     font-size: 3.2rem;
@@ -802,7 +834,7 @@ body {
     width: 170px;
     height: 170px;
     top: -87px;
-    right: -27px;
+    // right: -27px;
   }
 
   .course-circle__text {
@@ -829,6 +861,12 @@ body {
     margin: 0;
     padding: 0 15px;
   }
+
+  .courses__container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
@@ -848,7 +886,7 @@ body {
 
   .courses__container {
     max-width: 743px;
-    padding-top: 85px;
+    padding-top: 100px;
     box-sizing: border-box;
     // overflow: hidden;
   }
@@ -857,7 +895,7 @@ body {
     width: 22.14vw;
     height: 22.14vw;
     top: -9.77vw;
-    right: -6.77vw;
+    // right: -3.77vw;
   }
 
   .course-circle__text {
@@ -917,7 +955,7 @@ body {
     width: 24.14vw;
     height: 24.14vw;
     top: -10.93vw;
-    right: -6.77vw;
+    // right: -6.77vw;
   }
 
   .course-circle__text {
@@ -976,7 +1014,7 @@ body {
     width: 30.28vw;
     height: 30.28vw;
     top: -14vw;
-    right: -7vw; //31px
+    // right: -5vw; //31px
   }
 
   .course-circle__text {
@@ -1161,6 +1199,7 @@ body {
 .speaking {
   margin-top: 136px;
   background-color: $mint;
+  height: 900px;
 }
 .card {
   display: $df;
@@ -1278,6 +1317,10 @@ body {
 // адаптив Speaking club
 
 @media screen and (max-width: 1024px) {
+  .speaking {
+    height: 1200px;
+  }
+
   .card {
     position: relative;
     left: 120px;
@@ -1309,13 +1352,15 @@ body {
 
   .description__text-price {
     position: relative;
-    left: 65px;
+    left: 180px;
+    top: 60px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .speaking {
     margin-top: 120px;
+    height: 1600px;
   }
 
   .chapter {
@@ -1405,13 +1450,14 @@ body {
     font-size: 4rem;
     position: relative;
     left: 460px;
-    bottom: 890px;
+    top: -870px;
   }
 }
 
 @media screen and (max-width: 430px) {
   .speaking {
     width: 425px;
+    height: 1850px;
     margin-top: 62px;
   }
 
@@ -1420,7 +1466,8 @@ body {
     top: 50px;
     left: 100px;
     padding-left: 0;
-    width: 350px;
+    width: 330px;
+    text-align: center;
   }
 
   .chapter__title {
@@ -1430,11 +1477,11 @@ body {
 
   .chapter__title-config {
     position: relative;
-    left: -70px;
+    left: -60px;
   }
 
   .chapter__title-configure {
-    padding-right: 20px;
+    padding-right: 5px;
   }
 
   .grouping {
@@ -1511,7 +1558,7 @@ body {
   }
 
   .chapter__title-config {
-    margin-left: 14px;
+    margin-left: 5px;
   }
 
   .chapter__title-configure {
@@ -1572,27 +1619,59 @@ body {
 }
 
 @media screen and (max-width: 390px) {
+  .speaking {
+    padding: 0;
+    width: 390px;
+  }
+
+  .chapter {
+    position: relative;
+    left: 100px;
+  }
+
+  .grouping {
+    position: relative;
+    left: -205px;
+  }
+
+  .card__text-rotate-25 {
+    position: relative;
+    left: 87px;
+  }
+
+  .description {
+    position: relative;
+    left: -60px;
+  }
+
+  .description__text-price {
+    position: relative;
+    left: 160px;
+  }
 }
 
 @media screen and (max-width: 375px) {
   .speaking {
+    padding: 0;
+    width: 375px;
+    height: 1800px;
     margin-top: 62px;
   }
 
   .chapter {
     position: relative;
     top: 50px;
-    left: 125px;
+    left: 95px;
   }
 
   .chapter__title-config {
     position: relative;
-    left: -70px;
+    left: -75px;
   }
 
   .grouping {
     position: relative;
-    left: -190px;
+    left: -220px;
   }
 
   .grouping__title {
@@ -1605,11 +1684,9 @@ body {
   }
 
   .card__text-rotate-25 {
-    // margin-bottom: 25px;
-    // только он поднимает блок "еженедльно"
-    padding: 12px;
-    height: 50px;
-    left: 100px;
+    height: 40px;
+    width: 160px;
+    left: 95px;
     top: -160px;
 
     // немного отодвигает границы текста от блока
@@ -1625,6 +1702,11 @@ body {
     right: 220px;
   }
 
+  .description {
+    position: relative;
+    left: -70px;
+  }
+
   .description__text {
     font-size: 1.8rem;
   }
@@ -1632,24 +1714,32 @@ body {
   .description__text-price {
     position: relative;
     top: -20px;
-    left: 230px;
+    left: 185px;
     width: 4em;
   }
 }
 
 @media screen and (max-width: 360px) {
   .speaking {
+    padding: 0;
+    width: 360px;
     margin-top: 62px;
   }
 
   .chapter {
     position: relative;
-    right: 170px;
+    // right: 170px;
+    left: 85px;
     top: 50px;
   }
 
   .chapter__title {
     font-size: 2.1rem;
+  }
+
+  .chapter__title-config {
+    position: relative;
+    left: -65px;
   }
 
   .chapter__title-configure {
@@ -1661,8 +1751,13 @@ body {
     left: 110px;
   }
 
+  .card__text-rotate-25 {
+    position: relative;
+    left: 85px;
+  }
+
   .grouping {
-    margin-left: 90px;
+    margin-left: 92px;
   }
 
   .description {
@@ -1701,6 +1796,7 @@ body {
   width: 100%;
   height: 100%;
   flex-direction: column;
+  padding-top: 136px;
 }
 
 .reviews_title {
@@ -1732,6 +1828,7 @@ body {
 
 .swiper-slide-first {
   margin-left: 2.9%;
+  // border: pink 1px solid;
 }
 
 .reviews_card {
@@ -1769,8 +1866,7 @@ body {
 }
 
 .reviews_button,
-.button,
-.reviews_sent {
+.button{
   @extend%button;
 }
 
@@ -1779,8 +1875,14 @@ body {
   height: 67px;
   margin-top: 3%;
   font-size: 40px;
+  font-weight: 400;
   padding-top: 1%;
 }
+
+.button:hover{
+  background-color: #27686C;
+}
+
 
 // отзывы  styles end
 
@@ -1843,7 +1945,7 @@ body {
   color: $indigo;
 }
 
-.footer__lower-container-contacts_mail:hover{
+.footer__lower-container-contacts_mail:hover {
   text-decoration: underline;
 }
 
@@ -1854,7 +1956,7 @@ body {
   width: fit-content;
 }
 
-.footer__link-social_icon-back{
+.footer__link-social_icon-back {
   display: $df;
   justify-content: center;
   align-items: center;
@@ -1958,10 +2060,11 @@ body {
   }
 }
 /*Адаптивность для планшета и и маленького десктопа  конец*/
-@media screen and (max-width: 768px) { /*[ховеры на планшете и ниже*/
-.header__menu-link:hover {
-  color: $blue;
-}
+@media screen and (max-width: 768px) {
+  /*[ховеры на планшете и ниже*/
+  .header__menu-link:hover {
+    color: $blue;
+  }
 }
 
 /*Адаптивность для мобильного начало*/
@@ -2122,7 +2225,7 @@ body {
     font-size: 1em;
   }
 
-  .header__link-social_icon-back{
+  .header__link-social_icon-back {
     width: 12px;
     height: 12px;
   }
@@ -2154,7 +2257,7 @@ body {
     width: 60%;
   }
 
-  .footer__link-social_icon-back{
+  .footer__link-social_icon-back {
     width: 27px;
     height: 27px;
   }
@@ -2233,8 +2336,8 @@ body {
 @media screen and (min-width: 800px) {
   .swipesection,
     // .swiper,
-    .swiper-button-next,
-    .swiper-button-prev,
+    // .swiper-button-next,
+    // .swiper-button-prev,
     .swiper-pagination {
     display: none;
   }
@@ -2395,6 +2498,8 @@ body {
     width: 350px;
     height: 450px;
   }
+
+
 }
 
 @media screen and (max-width: 1160px) {
@@ -2420,6 +2525,7 @@ body {
   .reviews_content {
     height: 963px;
     justify-content: space-around;
+    padding-top: 122px;
   }
   .reviews_card {
     height: 550px;
@@ -2440,7 +2546,9 @@ body {
 
   .reviews_button__big {
     width: 243px;
-    height: 68px;
+    height: 67px;
+    font-size: 36px;
+    font-weight: 400;
   }
 
   .swiper-button-next,
@@ -2495,6 +2603,12 @@ body {
     height: 950px;
     // max-width: 360px;
   }
+
+  .reviews_content {
+    padding-top: 0;
+  }
+
+
   .card_wrapper {
     width: 260px;
     height: 693px;
@@ -2503,6 +2617,8 @@ body {
   .reviews_button__big {
     width: 202px;
     height: 56px;
+    font-size: 24px;
+    font-weight: 400;
   }
 
   .reviews_inscription {
@@ -2525,12 +2641,23 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .swiper-button-next:after {
-    content: url(/assets/images/button-next.svg) !important;
+@media screen and (max-width: 344px){
+  .reviews_text,
+  .reviews_signature {
+    font-size: 18px;
   }
+}
 
-  .swiper-button-prev:after {
-    content: url(/assets/images/button-prev.svg) !important;
+@media screen and (min-width: 1550px) {
+  // .swiper-button-next:after {
+  //   content: url(/assets/images/button-next.svg) !important;
+  // }
+
+  // .swiper-button-prev:after {
+  //   content: url(/assets/images/button-prev.svg) !important;
+  // }
+
+  .swiper-slide-first {
+    padding-left: 2.5%;
   }
 }
